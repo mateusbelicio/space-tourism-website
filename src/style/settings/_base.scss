@@ -1,0 +1,96 @@
+/* ------------------------------------------- */
+/* BASE CONFIGURATIONS */
+/* ------------------------------------------- */
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background-color: getColor('primary');
+  color: getColor('accent');
+  font-family: $ff-body;
+  font-size: size(md);
+  min-height: 100vh;
+  text-align: left;
+  line-height: 1.7778;
+}
+
+h1, h2, h3, h4 {
+  color: getColor('neutral', 100);
+  font-family: $ff-heading;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+h1, 
+.heading--1 {
+  font-size: size('4xb');
+
+  & > span {
+    color: getColor('accent');
+    display: block;
+    font-family: $ff-subheading;
+    font-size: space('lg');
+    letter-spacing: calc(29.68 * 0.01em);
+    margin-bottom: space('xl');
+  }
+}
+
+h2, 
+.heading--2 {
+  font-size: size('3xb');
+}
+
+h3, 
+.heading--3 {
+  font-size: size('bg');
+}
+
+h4, 
+.heading--4 {
+  font-size: size('xl');
+}
+
+.subheading {
+  font-family: $ff-subheading;
+  text-transform: uppercase;
+
+  &--1 {
+    font-family: $ff-heading;
+    font-size: size('lg');
+  }
+
+  &--2 {
+    font-size: size('sm');
+    letter-spacing: calc(14.68 * 0.01em);
+  }
+}
+
+p {
+  color: inherit;
+  font-size: inherit;
+}
+
+nav a {
+  font-family: $ff-subheading;
+  font-size: size('rg');
+  letter-spacing: calc(16.875 * 0.01em);
+  text-transform: uppercase;
+}
+
+a {
+  color: getColor('neutral', 100);
+  text-decoration: none;
+}
+
+:focus {
+  outline: 2px dotted getColor('neutral', 300);
+  outline-offset: 0.2rem;
+}
+
+::selection {
+  color: getColor('primary', 300);
+  background: getColor('accent', 500);
+}

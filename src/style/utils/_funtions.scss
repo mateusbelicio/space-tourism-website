@@ -1,0 +1,21 @@
+// Use to define a value to font-size
+@function size($sizeKey) {
+  @return var(--fs-#{$sizeKey});
+}
+
+// Use to define a value to white spaces on the page (paddings and margins)
+@function space($spaceKey) {
+  @return var(--sp-#{$spaceKey});
+}
+
+// Use to define a max-width to container
+@function container($containerKey) {
+  $width: map-get($containers, $containerKey);
+  
+  @return #{$width};
+}
+
+// Use to get a color from the colors defined in the '_map.scss' file
+@function getColor($name, $variation: 400) {
+  @return var(--clr-#{$name}-#{$variation});
+}

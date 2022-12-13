@@ -1,0 +1,38 @@
+// Media breakpoints
+@mixin breakpoint($breakpointKey) {
+  @if map-has-key($breakpoints, $breakpointKey) {
+    $breakpointValue: map-get($breakpoints, $breakpointKey);
+
+    @media (min-width: $breakpointValue) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpointKey) {
+      @content;
+    }
+  }
+}
+
+// Z-indexes
+@mixin z-index($position: default) {
+  @if map-has-key($z-index, $position) {
+    $value: map-get($z-index, $position);
+    z-index: #{$value};
+  } @else {
+    $value: map-get($z-index, default);
+    z-index: #{$value};
+  }
+}
+
+// Shadows
+@mixin shadow($type: 1) {
+  $key: color-#{$type};
+
+  @if map-has-key($shadows, $key) {
+    $value: map-get($shadows, $key);
+    box-shadow: #{$value};
+  } @else {
+    $value: map-get($shadows, color-1);
+    box-shadow: #{$value};
+  }
+}

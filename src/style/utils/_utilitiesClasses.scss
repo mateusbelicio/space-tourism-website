@@ -1,0 +1,76 @@
+/* ------------------------------------------- */
+/* UTILITIES CLASSES */
+/* ------------------------------------------- */
+
+/* CONTAINER */
+
+.container {
+  $padding: space(md);
+  $max-width: container(xl);
+
+  width: min($max-width, calc(100% - 2 * $padding));
+  min-width: 20rem;
+  margin-inline: auto;
+}
+
+/* BUTTONS */
+
+.button {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: $ff-heading;
+  font-size: size('xl');
+  letter-spacing: calc(12.5 * 0.01em);
+  line-height: 1;
+  text-transform: uppercase;
+
+  &--main {
+    background-color: getColor('neutral', 100);
+    color: getColor('primary');
+    cursor: pointer;
+    width: 17.125rem; 
+
+    &:hover {
+      animation: pulse 1s infinite ease-in;
+    }
+  }
+
+  &--dot {
+    background-color: getColor('neutral', 100);
+    color: transparent;
+    opacity: 0.1744;
+    transition: opacity 0.3s ease-in;
+    width: 1rem; 
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active, &[data-status=active] {
+      opacity: 1;
+    }
+  }
+
+  &--slider {
+    background-color: getColor('primary');
+    color: getColor('neutral', 100);
+    border: 1px solid hsla(0, 0, 100%, 0.25);
+    letter-spacing: 0;
+    transition: 
+      background-color 0.3s ease-in,
+      color 0.3s ease-in,
+      border 0.2s ease-in;
+    width: 5rem; 
+    
+    &:hover {
+      border: 1px solid hsla(0, 0, 100%, 1);
+    }
+    
+    &:active, &[data-status=active] {
+      border: 1px solid hsla(0, 0, 100%, 1);
+      background-color: getColor('neutral', 100);
+      color: getColor('primary');
+    }
+  }
+}
