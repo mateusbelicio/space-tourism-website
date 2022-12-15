@@ -1,0 +1,24 @@
+.heading {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr container(xl) 1fr;
+  justify-items: center;
+  margin-top: 2.5rem;
+  padding-block: space('md');
+
+  &__logo {
+    aspect-ratio: 1;
+    width: 2.5rem;
+  }
+
+  &__navigation {
+    justify-self: end;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: space('xl');
+  }
+}

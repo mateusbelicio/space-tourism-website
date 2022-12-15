@@ -1,6 +1,6 @@
 // Use to define a value to font-size
-@function size($sizeKey) {
-  @return var(--fs-#{$sizeKey});
+@function size($size) {
+  @return calc($size / 16) + rem;
 }
 
 // Use to define a value to white spaces on the page (paddings and margins)

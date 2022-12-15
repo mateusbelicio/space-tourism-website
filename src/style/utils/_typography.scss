@@ -11,11 +11,6 @@ $ff-subheading: 'Barlow Condensed', sans-serif;
 // To change the typography go to file '_map.scss'
 
 :root {
-  /* Font size */
-  @each $name, $size in $font-scale {
-    --fs-#{$name}: #{$size};
-  }
-
   /* Spaces */
   @each $name, $size in $space-scale {
     --sp-#{$name}: #{$size};

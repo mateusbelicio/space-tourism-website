@@ -1,127 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
-/* ------------------------------------------- */
-/* TYPOGRAPHY */
-/* ------------------------------------------- */
-:root {
-  /* Font size */
-  --fs-2xs: 0.625rem;
-  --fs-xs: 0.75rem;
-  --fs-sm: 0.875rem;
-  --fs-rg: 1rem;
-  --fs-md: 1.125rem;
-  --fs-lg: 1.75rem;
-  --fs-xl: 2rem;
-  --fs-2xl: 2.25rem;
-  --fs-3xl: 3rem;
-  --fs-bg: 3.5rem;
-  --fs-xb: 4.25rem;
-  --fs-2xb: 5.375rem;
-  --fs-3xb: 6.25rem;
-  --fs-4xb: 9.375rem;
-  /* Spaces */
-  --sp-3xs: 0.125rem;
-  --sp-2xs: 0.25rem;
-  --sp-xs: 0.5rem;
-  --sp-sm: 0.75rem;
-  --sp-rg: 1rem;
-  --sp-md: 1.5rem;
-  --sp-lg: 2rem;
-  --sp-xl: 3rem;
-  --sp-2xl: 4rem;
-  --sp-3xl: 5rem;
-  --sp-bg: 6rem;
-  --sp-xb: 8rem;
-}
-
-/* ------------------------------------------- */
-/* COLORS */
-/* ------------------------------------------- */
-:root {
-  /*================================================*/
-  --clr-neutral-100: hsl(0deg, 0%, 100%);
-  --clr-neutral-200: hsl(0deg, 0%, 96%);
-  --clr-neutral-300: hsl(0deg, 0%, 93%);
-  --clr-neutral-400: hsl(0deg, 0%, 88%);
-  --clr-neutral-500: hsl(0deg, 0%, 74%);
-  /*================================================*/
-  --clr-dark-100: hsl(0deg, 0%, 59%);
-  --clr-dark-200: hsl(0deg, 0%, 46%);
-  --clr-dark-300: hsl(240deg, 12%, 30%);
-  --clr-dark-400: hsl(240deg, 14%, 11%);
-  --clr-dark-500: hsl(0deg, 0%, 13%);
-  /*================================================*/
-  --clr-primary-300: hsl(230deg, 35%, 15%);
-  --clr-primary-400: hsl(230deg, 35%, 7%);
-  /*================================================*/
-  --clr-accent-400: hsl(231deg, 77%, 90%);
-  --clr-accent-500: hsl(231deg, 77%, 86%);
-}
-
-/* ------------------------------------------- */
-/* UTILITIES CLASSES */
-/* ------------------------------------------- */
-/* CONTAINER */
-.container {
-  width: min(69.375rem, 100% - 2 * var(--sp-md));
-  min-width: 20rem;
-  margin-inline: auto;
-}
-
-/* BUTTONS */
-.button {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  cursor: pointer;
-  font-family: "Bellefair", serif;
-  font-size: var(--fs-xl);
-  letter-spacing: 0.125em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.button--main {
-  background-color: var(--clr-neutral-100);
-  color: var(--clr-primary-400);
-  cursor: pointer;
-  width: 17.125rem;
-}
-.button--main:hover {
-  -webkit-animation: pulse 1s infinite ease-in;
-          animation: pulse 1s infinite ease-in;
-}
-.button--dot {
-  background-color: var(--clr-neutral-100);
-  color: transparent;
-  opacity: 0.1744;
-  transition: opacity 0.3s ease-in;
-  width: 1rem;
-}
-.button--dot:hover {
-  opacity: 0.5;
-}
-.button--dot:active, .button--dot[data-status=active] {
-  opacity: 1;
-}
-.button--slider {
-  background-color: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
-  border: 1px solid hsla(0deg, 0%, 100%, 0.25);
-  letter-spacing: 0;
-  transition: background-color 0.3s ease-in, color 0.3s ease-in, border 0.2s ease-in;
-  width: 5rem;
-}
-.button--slider:hover {
-  border: 1px solid hsl(0deg, 0%, 100%);
-}
-.button--slider:active, .button--slider[data-status=active] {
-  border: 1px solid hsl(0deg, 0%, 100%);
-  background-color: var(--clr-neutral-100);
-  color: var(--clr-primary-400);
-}
-
 /* ------------------------------------------- */
 /* RESET CSS */
 /* ------------------------------------------- */
 /* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
 *,
 *::before,
 *::after {
@@ -204,12 +86,6 @@ meter {
        appearance: revert;
 }
 
-/* Fix the feature of 'hidden' attribute.
- display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
 /* revert for bug in Chromium browsers
  - fix for the content editable attribute will work properly. */
 :where([contenteditable]) {
@@ -224,6 +100,59 @@ meter {
 }
 
 /* ------------------------------------------- */
+/* TYPOGRAPHY */
+/* ------------------------------------------- */
+:root {
+  /* Spaces */
+  --sp-3xs: 0.125rem;
+  --sp-2xs: 0.25rem;
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-rg: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 2rem;
+  --sp-xl: 3rem;
+  --sp-2xl: 4rem;
+  --sp-3xl: 5rem;
+  --sp-bg: 6rem;
+  --sp-xb: 8rem;
+}
+
+/* ------------------------------------------- */
+/* COLORS */
+/* ------------------------------------------- */
+:root {
+  /*================================================*/
+  --clr-neutral-100: hsl(0deg, 0%, 100%);
+  --clr-neutral-200: hsl(0deg, 0%, 96%);
+  --clr-neutral-300: hsl(0deg, 0%, 93%);
+  --clr-neutral-400: hsl(0deg, 0%, 88%);
+  --clr-neutral-500: hsl(0deg, 0%, 74%);
+  /*================================================*/
+  --clr-dark-100: hsl(0deg, 0%, 59%);
+  --clr-dark-200: hsl(0deg, 0%, 46%);
+  --clr-dark-300: hsl(240deg, 12%, 30%);
+  --clr-dark-400: hsl(240deg, 14%, 11%);
+  --clr-dark-500: hsl(0deg, 0%, 13%);
+  /*================================================*/
+  --clr-primary-300: hsl(230deg, 35%, 15%);
+  --clr-primary-400: hsl(230deg, 35%, 7%);
+  /*================================================*/
+  --clr-accent-400: hsl(231deg, 77%, 90%);
+  --clr-accent-500: hsl(231deg, 77%, 86%);
+}
+
+/* ------------------------------------------- */
+/* UTILITIES CLASSES */
+/* ------------------------------------------- */
+/* CONTAINER */
+.container {
+  width: min(69.375rem, 100% - 2 * var(--sp-md));
+  min-width: 20rem;
+  margin-inline: auto;
+}
+
+/* ------------------------------------------- */
 /* BASE CONFIGURATIONS */
 /* ------------------------------------------- */
 html {
@@ -234,7 +163,7 @@ body {
   background-color: var(--clr-primary-400);
   color: var(--clr-accent-400);
   font-family: "Barlow", sans-serif;
-  font-size: var(--fs-md);
+  font-size: clamp(0.9375rem, 2.083vw, 1.125rem);
   min-height: 100vh;
   text-align: left;
   line-height: 1.7778;
@@ -250,31 +179,31 @@ h1, h2, h3, h4 {
 
 h1,
 .heading--1 {
-  font-size: var(--fs-4xb);
+  font-size: clamp(5rem, 19.5vw, 9.375rem);
 }
 h1 > span,
 .heading--1 > span {
   color: var(--clr-accent-400);
   display: block;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: var(--sp-lg);
-  letter-spacing: 0.2968em;
+  font-size: clamp(1rem, 2.6vw, 1.75rem);
+  letter-spacing: clamp(0.16875rem, 0.25vw, 0.295rem);
   margin-bottom: var(--sp-xl);
 }
 
 h2,
 .heading--2 {
-  font-size: var(--fs-3xb);
+  font-size: clamp(5rem, 5vw, 6.25rem);
 }
 
 h3,
 .heading--3 {
-  font-size: var(--fs-bg);
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
 }
 
 h4,
 .heading--4 {
-  font-size: var(--fs-xl);
+  font-size: clamp(1rem, 1.6vw, 2rem);
 }
 
 .subheading {
@@ -283,23 +212,16 @@ h4,
 }
 .subheading--1 {
   font-family: "Bellefair", serif;
-  font-size: var(--fs-lg);
+  font-size: 1.75rem;
 }
 .subheading--2 {
-  font-size: var(--fs-sm);
-  letter-spacing: 0.1468em;
+  font-size: 0.875rem;
+  letter-spacing: 0.1475rem;
 }
 
 p {
   color: inherit;
   font-size: inherit;
-}
-
-nav a {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: var(--fs-rg);
-  letter-spacing: 0.16875em;
-  text-transform: uppercase;
 }
 
 a {
@@ -320,6 +242,169 @@ a {
 ::selection {
   color: var(--clr-primary-300);
   background: var(--clr-accent-500);
+}
+
+/* ------------------------------------------- */
+/* TYPOGRAPHY */
+/* ------------------------------------------- */
+:root {
+  /* Spaces */
+  --sp-3xs: 0.125rem;
+  --sp-2xs: 0.25rem;
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-rg: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 2rem;
+  --sp-xl: 3rem;
+  --sp-2xl: 4rem;
+  --sp-3xl: 5rem;
+  --sp-bg: 6rem;
+  --sp-xb: 8rem;
+}
+
+/* ------------------------------------------- */
+/* COLORS */
+/* ------------------------------------------- */
+:root {
+  /*================================================*/
+  --clr-neutral-100: hsl(0deg, 0%, 100%);
+  --clr-neutral-200: hsl(0deg, 0%, 96%);
+  --clr-neutral-300: hsl(0deg, 0%, 93%);
+  --clr-neutral-400: hsl(0deg, 0%, 88%);
+  --clr-neutral-500: hsl(0deg, 0%, 74%);
+  /*================================================*/
+  --clr-dark-100: hsl(0deg, 0%, 59%);
+  --clr-dark-200: hsl(0deg, 0%, 46%);
+  --clr-dark-300: hsl(240deg, 12%, 30%);
+  --clr-dark-400: hsl(240deg, 14%, 11%);
+  --clr-dark-500: hsl(0deg, 0%, 13%);
+  /*================================================*/
+  --clr-primary-300: hsl(230deg, 35%, 15%);
+  --clr-primary-400: hsl(230deg, 35%, 7%);
+  /*================================================*/
+  --clr-accent-400: hsl(231deg, 77%, 90%);
+  --clr-accent-500: hsl(231deg, 77%, 86%);
+}
+
+/* ------------------------------------------- */
+/* UTILITIES CLASSES */
+/* ------------------------------------------- */
+/* CONTAINER */
+.container {
+  width: min(69.375rem, 100% - 2 * var(--sp-md));
+  min-width: 20rem;
+  margin-inline: auto;
+}
+
+.heading {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 69.375rem 1fr;
+  justify-items: center;
+  margin-top: 2.5rem;
+  padding-block: var(--sp-md);
+}
+.heading__logo {
+  aspect-ratio: 1;
+  width: 2.5rem;
+}
+.heading__navigation {
+  justify-self: end;
+}
+.heading__list {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: var(--sp-xl);
+}
+
+/* BUTTONS */
+.button {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  font-family: "Bellefair", serif;
+  font-size: clamp(1.25rem, 4.16vw, 2rem);
+  letter-spacing: clamp(0.078125rem, 0.26vw, 0.125rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.button:where([hidden]) {
+  display: none;
+}
+.button--main {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-400);
+  cursor: pointer;
+  width: 17.125rem;
+}
+.button--main:hover {
+  -webkit-animation: pulse 1s infinite ease-in;
+          animation: pulse 1s infinite ease-in;
+}
+.button--dot {
+  background-color: var(--clr-neutral-100);
+  color: transparent;
+  opacity: 0.1744;
+  transition: opacity 0.3s ease-in;
+  width: 1rem;
+}
+.button--dot:hover {
+  opacity: 0.5;
+}
+.button--dot:active, .button--dot[data-status=active] {
+  opacity: 1;
+}
+.button--slider {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  border: 1px solid hsla(0deg, 0%, 100%, 0.25);
+  letter-spacing: 0;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in, border 0.2s ease-in;
+  width: 5rem;
+}
+.button--slider:hover {
+  border: 1px solid hsl(0deg, 0%, 100%);
+}
+.button--slider:active, .button--slider[data-status=active] {
+  border: 1px solid hsl(0deg, 0%, 100%);
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-400);
+}
+
+/* TABS */
+.tab {
+  color: var(--clr-accent-400);
+  border-bottom: 0.1875rem solid transparent;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(0.875rem, 2.083vw, 1rem);
+  letter-spacing: clamp(0.1475rem, 0.31vw, 0.16875rem);
+  text-transform: uppercase;
+  padding-bottom: var(--sp-sm);
+  transition: border-bottom-color 0.2s ease-in, color 0.2s ease-in;
+}
+.tab:hover {
+  border-bottom-color: hsla(0deg, 0%, 100%, 0.5);
+}
+.tab:active, .tab[data-status=active] {
+  border-bottom-color: hsl(0deg, 0%, 100%);
+  color: var(--clr-neutral-100);
+}
+
+/* NAV LINKS */
+nav a {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.16875rem;
+  text-transform: uppercase;
+}
+@media (min-width: 48em) {
+  nav a {
+    font-size: clamp(0.875rem, 1.823vw, 1rem);
+    letter-spacing: clamp(0.1475rem, 0.31vw, 0.16875rem);
+  }
 }
 
 @-webkit-keyframes pulse {

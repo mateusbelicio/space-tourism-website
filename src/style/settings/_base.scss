@@ -1,3 +1,5 @@
+@use '../utils/' as *;
+
 /* ------------------------------------------- */
 /* BASE CONFIGURATIONS */
 /* ------------------------------------------- */
@@ -10,7 +12,7 @@ body {
   background-color: getColor('primary');
   color: getColor('accent');
   font-family: $ff-body;
-  font-size: size(md);
+  font-size: clamp(size(15), 2.083vw, size(18));
   min-height: 100vh;
   text-align: left;
   line-height: 1.7778;
@@ -26,31 +28,31 @@ h1, h2, h3, h4 {
 
 h1, 
 .heading--1 {
-  font-size: size('4xb');
+  font-size: clamp(size(80), 19.5vw, size(150));
 
   & > span {
     color: getColor('accent');
     display: block;
     font-family: $ff-subheading;
-    font-size: space('lg');
-    letter-spacing: calc(29.68 * 0.01em);
+    font-size: clamp(size(16), 2.6vw, size(28));
+    letter-spacing: clamp(size(2.7), 0.25vw, size(4.72));
     margin-bottom: space('xl');
   }
 }
 
 h2, 
 .heading--2 {
-  font-size: size('3xb');
+  font-size: clamp(size(80), 5vw, size(100));
 }
 
 h3, 
 .heading--3 {
-  font-size: size('bg');
+  font-size: clamp(size(24), 5vw, size(56));
 }
 
 h4, 
 .heading--4 {
-  font-size: size('xl');
+  font-size: clamp(size(16), 1.6vw, size(32));
 }
 
 .subheading {
@@ -59,25 +61,18 @@ h4,
 
   &--1 {
     font-family: $ff-heading;
-    font-size: size('lg');
+    font-size: size(28);
   }
 
   &--2 {
-    font-size: size('sm');
-    letter-spacing: calc(14.68 * 0.01em);
+    font-size: size(14);
+    letter-spacing: size(2.36);
   }
 }
 
 p {
   color: inherit;
   font-size: inherit;
-}
-
-nav a {
-  font-family: $ff-subheading;
-  font-size: size('rg');
-  letter-spacing: calc(16.875 * 0.01em);
-  text-transform: uppercase;
 }
 
 a {
