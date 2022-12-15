@@ -1,0 +1,36 @@
+/* TABS */
+
+.tab {
+  color: getColor('accent');
+  border-bottom: 0.1875rem solid transparent;
+  font-family: $ff-subheading;
+  font-size: clamp(size(14), 2.083vw, size(16));
+  letter-spacing: clamp(size(2.36), 0.31vw, size(2.7));
+  text-transform: uppercase;
+  padding-bottom: space('sm');
+  transition: border-bottom-color 0.2s ease-in, color 0.2s ease-in;
+
+  &:hover {
+    border-bottom-color: hsla(0, 0%, 100%, 0.5);
+  }
+
+  &:active,
+  &[data-status='active'] {
+    border-bottom-color: hsl(0, 0%, 100%);
+    color: getColor('neutral', 100);
+  }
+}
+
+/* NAV LINKS */
+
+nav a {
+  font-family: $ff-subheading;
+  font-size: size(16);
+  letter-spacing: size(2.7);
+  text-transform: uppercase;
+
+  @include breakpoint('lg') {
+    font-size: clamp(size(14), 1.823vw, size(16));
+    letter-spacing: clamp(size(2.36), 0.31vw, size(2.7));
+  }
+}
