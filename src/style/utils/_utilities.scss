@@ -8,7 +8,8 @@
   $padding: space('md');
   $max-width: container('xl');
 
-  width: min($max-width, calc(100% - 2 * $padding));
-  min-width: 20rem;
+  width: min($max-width, 100%);
+  min-width: 15rem;
+  padding-inline: $padding;
   margin-inline: auto;
 }

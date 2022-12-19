@@ -15,6 +15,13 @@
   @return #{$width};
 }
 
+// Use to define a z-index
+@function z-index($zIndexKey) {
+  $z: map-get($z-index, $zIndexKey);
+  
+  @return #{$z};
+}
+
 // Use to get a color from the colors defined in the '_map.scss' file
 @function getColor($name, $variation: 400) {
   @return var(--clr-#{$name}-#{$variation});

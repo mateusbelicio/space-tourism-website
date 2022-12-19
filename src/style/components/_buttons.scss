@@ -4,7 +4,7 @@
   aspect-ratio: 1;
   border-radius: 50%;
   cursor: pointer;
-  display: block;
+  // display: block;
   font-family: $ff-heading;
   font-size: clamp(size(20), 4.16vw, size(32));
   letter-spacing: clamp(size(1.25), 0.26vw, size(2));
@@ -19,7 +19,7 @@
     background-color: getColor('neutral', 100);
     color: getColor('primary');
     cursor: pointer;
-    width: 17.125rem;
+    width: clamp(size(150), 31.5vw, size(274));
 
     &:hover {
       animation: pulse 1s infinite ease-in;
@@ -60,6 +60,63 @@
       border: 1px solid hsla(0, 0%, 100%, 1);
       background-color: getColor('neutral', 100);
       color: getColor('primary');
+    }
+  }
+
+  &--menu {
+    background: transparent;
+    border-radius: 0;
+    position: relative;
+    width: size(24);
+
+    .line {
+      background-color: getColor('accent');
+      display: block;
+      height: size(3);
+      position: absolute;
+      width: 100%;
+
+      &--top {
+        top: 0;
+        translate: 0;
+        rotate: 0;
+        transition: top 0.25s 0.15s ease-in, translate 0.15s 0.25s ease-in, rotate 0.25s linear;
+      }
+
+      &--bottom {
+        bottom: 0;
+        translate: 0;
+        rotate: 0;
+        transition: bottom 0.25s 0.15s ease-in, translate 0.15s 0.25s ease-in, rotate 0.25s linear;
+      }
+
+      &--middle {
+        top: 50%;
+        translate: 0 -50%;
+        transition: opacity 0.1s 0.2s linear;
+      }
+    }
+  }
+
+  // &--menu:hover .line {
+  &--menu[data-active='true'] .line {
+    &--top {
+      top: 50%;
+      translate: 0 -50%;
+      rotate: 135deg;
+      transition: top 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
+    }
+
+    &--bottom {
+      bottom: 50%;
+      translate: 0 50%;
+      rotate: 225deg;
+      transition: bottom 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
+    }
+
+    &--middle {
+      opacity: 0;
+      transition: opacity 0.1s 0.25s linear;
     }
   }
 }

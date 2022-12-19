@@ -8,6 +8,8 @@
     
     <link rel="icon" href="./src/assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="./src/style/main.css" />
+
+    <script type="module" src="./src/js/main.js"></script>
   </head>
   
   <body>
@@ -16,25 +18,29 @@
            src="./src/assets/icons/logo.svg" alt="" 
            aria-hidden="true"
       />
-      <nav class="heading__navigation">
-        <ul class="heading__list">
-          <li><a href="#" class="heading__link">Home</a></li>
+      <button class="heading__button | button button--menu | menu-js" 
+              aria-label="menu"
+              aria-controls="main-nav"
+              data-active="false">
+        <span class="line line--top"></span>
+        <span class="line line--middle"></span>
+        <span class="line line--bottom"></span>
+      </button>
+
+      <nav id="main-nav" class="heading__navigation | nav-js">
+        <ol class="heading__list">
+          <li><a href="#" class="heading__link heading__link--current">Home</a></li>
           <li><a href="#" class="heading__link">Destination</a></li>
           <li><a href="#" class="heading__link">Crew</a></li>
           <li><a href="#" class="heading__link">Technology</a></li>
-        </ul>
+        </ol>
       </nav>
-      <button class="heading__button | button button--menu" aria-label="menu" hidden>
-        <span class="humburguer-icon top"></span>
-        <span class="humburguer-icon middle"></span>
-        <span class="humburguer-icon bottom"></span>
-      </button>
     </header>
 
     <main>
       <div class="container">
         <div class="content">
-          <h1><span>So, you want to travel to</span> Space</h1>
+          <h1><span>So, you want to travel to</span>Space</h1>
           <p>
             Let’s face it; if you want to go to space, you might as well genuinely go to outer space
             and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a

@@ -1,9 +1,71 @@
 /* ------------------------------------------- */
+/* TYPOGRAPHY */
+/* ------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+:root {
+  /* Spaces */
+  --sp-3xs: 0.125rem;
+  --sp-2xs: 0.25rem;
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-rg: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 2rem;
+  --sp-xl: 3rem;
+  --sp-2xl: 4rem;
+  --sp-3xl: 5rem;
+  --sp-bg: 6rem;
+  --sp-xb: 8rem;
+}
+
+/* ------------------------------------------- */
+/* COLORS */
+/* ------------------------------------------- */
+:root {
+  /*================================================*/
+  --clr-opacity-100l: hsla(0deg, 0%, 100%, 0.05);
+  --clr-opacity-200l: hsla(0deg, 0%, 100%, 0.15);
+  --clr-opacity-300l: hsla(0deg, 0%, 100%, 0.25);
+  --clr-opacity-400l: hsla(0deg, 0%, 100%, 0.5);
+  --clr-opacity-100d: hsla(0deg, 0%, 0%, 0.05);
+  --clr-opacity-200d: hsla(0deg, 0%, 0%, 0.15);
+  --clr-opacity-300d: hsla(0deg, 0%, 0%, 0.25);
+  --clr-opacity-400d: hsla(0deg, 0%, 0%, 0.5);
+  /*================================================*/
+  --clr-neutral-100: hsl(0deg, 0%, 100%);
+  --clr-neutral-200: hsl(0deg, 0%, 96%);
+  --clr-neutral-300: hsl(0deg, 0%, 93%);
+  --clr-neutral-400: hsl(0deg, 0%, 88%);
+  --clr-neutral-500: hsl(0deg, 0%, 74%);
+  /*================================================*/
+  --clr-dark-100: hsl(0deg, 0%, 59%);
+  --clr-dark-200: hsl(0deg, 0%, 46%);
+  --clr-dark-300: hsl(240deg, 12%, 30%);
+  --clr-dark-400: hsl(240deg, 14%, 11%);
+  --clr-dark-500: hsl(0deg, 0%, 13%);
+  /*================================================*/
+  --clr-primary-300: hsl(230deg, 35%, 15%);
+  --clr-primary-400: hsl(230deg, 35%, 7%);
+  /*================================================*/
+  --clr-accent-400: hsl(231deg, 77%, 90%);
+  --clr-accent-500: hsl(231deg, 77%, 86%);
+}
+
+/* ------------------------------------------- */
+/* UTILITIES CLASSES */
+/* ------------------------------------------- */
+/* CONTAINER */
+.container {
+  width: min(69.375rem, 100%);
+  min-width: 15rem;
+  padding-inline: var(--sp-md);
+  margin-inline: auto;
+}
+
+/* ------------------------------------------- */
 /* RESET CSS */
 /* ------------------------------------------- */
 /* Box sizing rules */
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
 *,
 *::before,
 *::after {
@@ -100,59 +162,6 @@ meter {
 }
 
 /* ------------------------------------------- */
-/* TYPOGRAPHY */
-/* ------------------------------------------- */
-:root {
-  /* Spaces */
-  --sp-3xs: 0.125rem;
-  --sp-2xs: 0.25rem;
-  --sp-xs: 0.5rem;
-  --sp-sm: 0.75rem;
-  --sp-rg: 1rem;
-  --sp-md: 1.5rem;
-  --sp-lg: 2rem;
-  --sp-xl: 3rem;
-  --sp-2xl: 4rem;
-  --sp-3xl: 5rem;
-  --sp-bg: 6rem;
-  --sp-xb: 8rem;
-}
-
-/* ------------------------------------------- */
-/* COLORS */
-/* ------------------------------------------- */
-:root {
-  /*================================================*/
-  --clr-neutral-100: hsl(0deg, 0%, 100%);
-  --clr-neutral-200: hsl(0deg, 0%, 96%);
-  --clr-neutral-300: hsl(0deg, 0%, 93%);
-  --clr-neutral-400: hsl(0deg, 0%, 88%);
-  --clr-neutral-500: hsl(0deg, 0%, 74%);
-  /*================================================*/
-  --clr-dark-100: hsl(0deg, 0%, 59%);
-  --clr-dark-200: hsl(0deg, 0%, 46%);
-  --clr-dark-300: hsl(240deg, 12%, 30%);
-  --clr-dark-400: hsl(240deg, 14%, 11%);
-  --clr-dark-500: hsl(0deg, 0%, 13%);
-  /*================================================*/
-  --clr-primary-300: hsl(230deg, 35%, 15%);
-  --clr-primary-400: hsl(230deg, 35%, 7%);
-  /*================================================*/
-  --clr-accent-400: hsl(231deg, 77%, 90%);
-  --clr-accent-500: hsl(231deg, 77%, 86%);
-}
-
-/* ------------------------------------------- */
-/* UTILITIES CLASSES */
-/* ------------------------------------------- */
-/* CONTAINER */
-.container {
-  width: min(69.375rem, 100% - 2 * var(--sp-md));
-  min-width: 20rem;
-  margin-inline: auto;
-}
-
-/* ------------------------------------------- */
 /* BASE CONFIGURATIONS */
 /* ------------------------------------------- */
 html {
@@ -188,7 +197,13 @@ h1 > span,
   font-family: "Barlow Condensed", sans-serif;
   font-size: clamp(1rem, 2.6vw, 1.75rem);
   letter-spacing: clamp(0.16875rem, 0.25vw, 0.295rem);
-  margin-bottom: var(--sp-xl);
+  margin-bottom: var(--sp-md);
+}
+@media (min-width: 48em) {
+  h1 > span,
+.heading--1 > span {
+    margin-bottom: var(--sp-xl);
+  }
 }
 
 h2,
@@ -229,11 +244,6 @@ a {
   text-decoration: none;
 }
 
-:focus {
-  outline: 2px dotted var(--clr-neutral-300);
-  outline-offset: 0.2rem;
-}
-
 ::-moz-selection {
   color: var(--clr-primary-300);
   background: var(--clr-accent-500);
@@ -244,87 +254,165 @@ a {
   background: var(--clr-accent-500);
 }
 
-/* ------------------------------------------- */
-/* TYPOGRAPHY */
-/* ------------------------------------------- */
-:root {
-  /* Spaces */
-  --sp-3xs: 0.125rem;
-  --sp-2xs: 0.25rem;
-  --sp-xs: 0.5rem;
-  --sp-sm: 0.75rem;
-  --sp-rg: 1rem;
-  --sp-md: 1.5rem;
-  --sp-lg: 2rem;
-  --sp-xl: 3rem;
-  --sp-2xl: 4rem;
-  --sp-3xl: 5rem;
-  --sp-bg: 6rem;
-  --sp-xb: 8rem;
-}
-
-/* ------------------------------------------- */
-/* COLORS */
-/* ------------------------------------------- */
-:root {
-  /*================================================*/
-  --clr-neutral-100: hsl(0deg, 0%, 100%);
-  --clr-neutral-200: hsl(0deg, 0%, 96%);
-  --clr-neutral-300: hsl(0deg, 0%, 93%);
-  --clr-neutral-400: hsl(0deg, 0%, 88%);
-  --clr-neutral-500: hsl(0deg, 0%, 74%);
-  /*================================================*/
-  --clr-dark-100: hsl(0deg, 0%, 59%);
-  --clr-dark-200: hsl(0deg, 0%, 46%);
-  --clr-dark-300: hsl(240deg, 12%, 30%);
-  --clr-dark-400: hsl(240deg, 14%, 11%);
-  --clr-dark-500: hsl(0deg, 0%, 13%);
-  /*================================================*/
-  --clr-primary-300: hsl(230deg, 35%, 15%);
-  --clr-primary-400: hsl(230deg, 35%, 7%);
-  /*================================================*/
-  --clr-accent-400: hsl(231deg, 77%, 90%);
-  --clr-accent-500: hsl(231deg, 77%, 86%);
-}
-
-/* ------------------------------------------- */
-/* UTILITIES CLASSES */
-/* ------------------------------------------- */
-/* CONTAINER */
-.container {
-  width: min(69.375rem, 100% - 2 * var(--sp-md));
-  min-width: 20rem;
-  margin-inline: auto;
-}
-
 .heading {
   align-items: center;
-  display: grid;
-  grid-template-columns: 1fr 69.375rem 1fr;
-  justify-items: center;
-  margin-top: 2.5rem;
-  padding-block: var(--sp-md);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-md);
+}
+.heading__navigation {
+  display: none;
+}
+.heading__button[data-active=true] + .heading__navigation {
+  -webkit-backdrop-filter: blur(5.0625rem);
+          backdrop-filter: blur(5.0625rem);
+  background-color: var(--clr-opacity-100l);
+  display: block;
+  height: 100%;
+  padding-top: var(--sp-xb);
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15.875rem;
+  z-index: 400;
+}
+.heading__button[data-active=true] + .heading__navigation .heading__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-rg);
+}
+.heading__button[data-active=true] + .heading__navigation .heading__list > li {
+  counter-increment: numItem;
+}
+.heading__button[data-active=true] + .heading__navigation .heading__list > li a::before {
+  content: "0" counter(numItem);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: bold;
+  margin-right: var(--sp-sm);
+}
+.heading__button[data-active=true] + .heading__navigation .heading__link {
+  border-right: 0.25rem solid transparent;
+  padding: var(--sp-xs) 0 var(--sp-xs) var(--sp-lg);
+  transition: border-color 0.2s ease-out;
+}
+.heading__button[data-active=true] + .heading__navigation .heading__link:where(:hover) {
+  border-right-color: var(--clr-opacity-400l);
+}
+.heading__button[data-active=true] + .heading__navigation .heading__link--current {
+  border-right-color: var(--clr-neutral-100);
 }
 .heading__logo {
   aspect-ratio: 1;
-  width: 2.5rem;
+  width: clamp(2.5rem, 6.25vw, 3rem);
+  flex-shrink: 0;
 }
-.heading__navigation {
-  justify-self: end;
+.heading__button {
+  z-index: 500;
 }
-.heading__list {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: var(--sp-xl);
+.heading__link {
+  display: block;
 }
 
+@media (min-width: 48em) {
+  .heading {
+    position: relative;
+    padding: 0;
+  }
+  .heading__logo {
+    margin: var(--sp-md);
+  }
+  .heading__navigation {
+    -webkit-backdrop-filter: blur(5.0625rem);
+            backdrop-filter: blur(5.0625rem);
+    background-color: var(--clr-opacity-100l);
+    display: block;
+    padding-inline: var(--sp-xl);
+    position: absolute;
+    right: 0;
+    height: 100%;
+  }
+  .heading__list {
+    align-items: center;
+    display: flex;
+    gap: var(--sp-lg);
+    height: 100%;
+    position: relative;
+    z-index: 500;
+  }
+  .heading__list > li {
+    height: inherit;
+  }
+  .heading__link {
+    align-items: center;
+    display: flex;
+    height: inherit;
+    border-bottom: 0.1875rem solid transparent;
+    transition: border-color 0.2s ease-out;
+  }
+  .heading__link:where(:hover) {
+    border-bottom-color: var(--clr-opacity-400l);
+  }
+  .heading__link--current {
+    border-bottom-color: var(--clr-neutral-100);
+  }
+  .heading__button {
+    display: none;
+  }
+}
+@media (min-width: 80em) {
+  .heading {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 69.375rem 1fr;
+    align-items: center;
+  }
+  .heading__logo {
+    justify-self: center;
+  }
+  .heading__navigation {
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 200;
+  }
+  .heading__navigation::before {
+    background-color: var(--clr-opacity-400l);
+    content: "";
+    height: 0.0625rem;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 42%;
+  }
+  .heading__list > li {
+    counter-increment: numItem;
+  }
+  .heading__list > li a::before {
+    content: "0" counter(numItem);
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: bold;
+    margin-right: var(--sp-sm);
+  }
+  .heading::after {
+    -webkit-backdrop-filter: blur(5.0625rem);
+            backdrop-filter: blur(5.0625rem);
+    background-color: var(--clr-opacity-100l);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 57vw;
+  }
+}
 /* BUTTONS */
 .button {
   aspect-ratio: 1;
   border-radius: 50%;
   cursor: pointer;
-  display: block;
   font-family: "Bellefair", serif;
   font-size: clamp(1.25rem, 4.16vw, 2rem);
   letter-spacing: clamp(0.078125rem, 0.26vw, 0.125rem);
@@ -338,7 +426,7 @@ a {
   background-color: var(--clr-neutral-100);
   color: var(--clr-primary-400);
   cursor: pointer;
-  width: 17.125rem;
+  width: clamp(9.375rem, 31.5vw, 17.125rem);
 }
 .button--main:hover {
   -webkit-animation: pulse 1s infinite ease-in;
@@ -372,6 +460,52 @@ a {
   border: 1px solid hsl(0deg, 0%, 100%);
   background-color: var(--clr-neutral-100);
   color: var(--clr-primary-400);
+}
+.button--menu {
+  background: transparent;
+  border-radius: 0;
+  position: relative;
+  width: 1.5rem;
+}
+.button--menu .line {
+  background-color: var(--clr-accent-400);
+  display: block;
+  height: 0.1875rem;
+  position: absolute;
+  width: 100%;
+}
+.button--menu .line--top {
+  top: 0;
+  translate: 0;
+  rotate: 0;
+  transition: top 0.25s 0.15s ease-in, translate 0.15s 0.25s ease-in, rotate 0.25s linear;
+}
+.button--menu .line--bottom {
+  bottom: 0;
+  translate: 0;
+  rotate: 0;
+  transition: bottom 0.25s 0.15s ease-in, translate 0.15s 0.25s ease-in, rotate 0.25s linear;
+}
+.button--menu .line--middle {
+  top: 50%;
+  translate: 0 -50%;
+  transition: opacity 0.1s 0.2s linear;
+}
+.button--menu[data-active=true] .line--top {
+  top: 50%;
+  translate: 0 -50%;
+  rotate: 135deg;
+  transition: top 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
+}
+.button--menu[data-active=true] .line--bottom {
+  bottom: 50%;
+  translate: 0 50%;
+  rotate: 225deg;
+  transition: bottom 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
+}
+.button--menu[data-active=true] .line--middle {
+  opacity: 0;
+  transition: opacity 0.1s 0.25s linear;
 }
 
 /* TABS */
