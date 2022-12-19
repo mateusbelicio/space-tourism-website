@@ -9,7 +9,7 @@
   }
 
   &__button[data-active='true'] + &__navigation {
-    backdrop-filter: blur(size(81));
+    backdrop-filter: blur(size(40));
     background-color: getColor('opacity', '100l');
     display: block;
     height: 100%;
@@ -78,7 +78,7 @@
     }
 
     &__navigation {
-      backdrop-filter: blur(size(81));
+      backdrop-filter: blur(size(40));
       background-color: getColor('opacity', '100l');
       display: block;
       padding-inline: space('xl');
@@ -127,7 +127,7 @@
   .heading {
     margin-top: size(40);
     display: grid;
-    grid-template-columns: 1fr size(1110) 1fr;
+    grid-template-columns: 1fr 80% 1fr;
     align-items: center;
 
     &__logo {
@@ -149,7 +149,7 @@
         left: 0;
         position: absolute;
         top: 50%;
-        width: 42%;
+        width: 43%;
       }
     }
 
@@ -167,7 +167,7 @@
     }
 
     &::after {
-      backdrop-filter: blur(size(81));
+      backdrop-filter: blur(size(40));
       background-color: getColor('opacity', '100l');
       content: '';
       display: block;

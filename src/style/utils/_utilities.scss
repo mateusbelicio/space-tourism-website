@@ -6,10 +6,13 @@
 
 .container {
   $padding: space('md');
-  $max-width: container('xl');
-
-  width: min($max-width, 100%);
+  
+  width: 100%;
   min-width: 15rem;
   padding-inline: $padding;
   margin-inline: auto;
+
+  @include breakpoint('bg') {
+    width: 80%;
+  }
 }
