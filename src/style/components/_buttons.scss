@@ -4,7 +4,6 @@
   aspect-ratio: 1;
   border-radius: 50%;
   cursor: pointer;
-  // display: block;
   font-family: $ff-heading;
   font-size: clamp(size(20), 4.16vw, size(32));
   letter-spacing: clamp(size(1.25), 0.26vw, size(2));
@@ -16,6 +15,9 @@
   }
 
   &--main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: getColor('neutral', 100);
     color: getColor('primary');
     cursor: pointer;
@@ -99,24 +101,29 @@
   }
 
   // &--menu:hover .line {
-  &--menu[data-active='true'] .line {
-    &--top {
-      top: 50%;
-      translate: 0 -50%;
-      rotate: 135deg;
-      transition: top 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
-    }
+  &--menu[data-active='true'] {
+    position: fixed;
+    right: space('md');
 
-    &--bottom {
-      bottom: 50%;
-      translate: 0 50%;
-      rotate: 225deg;
-      transition: bottom 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
-    }
+    .line {
+      &--top {
+        top: 50%;
+        translate: 0 -50%;
+        rotate: 135deg;
+        transition: top 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
+      }
 
-    &--middle {
-      opacity: 0;
-      transition: opacity 0.1s 0.25s linear;
+      &--bottom {
+        bottom: 50%;
+        translate: 0 50%;
+        rotate: 225deg;
+        transition: bottom 0.25s ease-out, translate 0.15s 0.15s ease-out, rotate 0.25s 0.25s linear;
+      }
+
+      &--middle {
+        opacity: 0;
+        transition: opacity 0.1s 0.25s linear;
+      }
     }
   }
 }

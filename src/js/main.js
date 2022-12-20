@@ -1,18 +1,10 @@
+import { fillDestination } from './destinations.js';
+import { resetButtonState, closeOnPressEscape } from './menu.js';
+
+/////////////////////////////////////////////////
+// Functionality of menu button on mobile screens
+
 const buttonMenu = document.querySelector('.menu-js');
-
-const resetButtonState = function () {
-  if (window.screen.width >= 768) {
-    buttonMenu.dataset.active = 'false';
-    window.removeEventListener('resize', resetButtonState);
-  }
-};
-
-const closeOnPressEscape = function (keyPressed) {
-  if (keyPressed.key === 'Escape') {
-    buttonMenu.dataset.active = 'false';
-    window.removeEventListener('keydown', closeOnPressEscape);
-  }
-};
 
 buttonMenu.addEventListener('click', () => {
   buttonMenu.dataset.active = buttonMenu.dataset.active === 'true' ? 'false' : 'true';
@@ -22,3 +14,9 @@ buttonMenu.addEventListener('click', () => {
     window.addEventListener('keydown', closeOnPressEscape);
   }
 });
+
+/////////////////////////////////////////////////
+// Destination page: tabs
+
+const tabs = document.querySelectorAll('.tab-js > input[name="planets"]');
+tabs.forEach((tab) => tab.addEventListener('click', fillDestination));

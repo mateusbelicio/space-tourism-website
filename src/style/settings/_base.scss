@@ -44,7 +44,7 @@ h1,
 
 h2, 
 .heading--2 {
-  font-size: clamp(size(80), 5vw, size(100));
+  font-size: clamp(size(56), 10.4vw, size(100));
 }
 
 h3, 
@@ -57,16 +57,25 @@ h4,
   font-size: clamp(size(16), 1.6vw, size(32));
 }
 
-.subheading {
+h5, 
+.heading--5 {
   font-family: $ff-subheading;
-  text-transform: uppercase;
+  font-size: clamp(size(16), 2.6vw, size(28));
+  letter-spacing: clamp(size(2.7), 0.25vw, size(4.72));
+}
 
+.subheading {
   &--1 {
+    color: getColor('neutral', 100);
     font-family: $ff-heading;
     font-size: size(28);
+    text-transform: uppercase;
+    line-height: 1;
   }
-
+  
   &--2 {
+    color: getColor('accent');
+    font-family: $ff-subheading;
     font-size: size(14);
     letter-spacing: size(2.36);
   }
