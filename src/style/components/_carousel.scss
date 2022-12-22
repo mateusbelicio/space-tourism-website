@@ -1,0 +1,46 @@
+.carousel {
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: size(1) solid getColor('primary', '200');
+    max-height: size(225);
+    overflow-x: hidden;
+
+    @include breakpoint('lg') {
+      max-height: none;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    flex-shrink: 0;
+
+    @include breakpoint('lg') {
+      height: auto;
+      max-width: size(300);
+    }
+
+    @include breakpoint('bg') {
+      max-width: none;
+      margin-top: auto;
+    }
+  }
+
+  &__controller {
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: space('rg');
+    line-height: 0;
+  }
+
+  &__dot {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    width: size(10);
+  }
+}

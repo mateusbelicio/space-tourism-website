@@ -1,7 +1,5 @@
 .destination-page {
   background-image: url('../assets/destination/background-destination-mobile.jpg');
-  background-size: cover;
-  padding-bottom: space('xl');
 
   @include breakpoint('lg') {
     background-image: url('../assets/destination/background-destination-tablet.jpg');
@@ -12,33 +10,6 @@
   }
 }
 
-.destination {
-  margin-top: space('md');
-
-  @include breakpoint('lg') {
-    margin-top: space('xl');
-  }
-
-  &__container {
-    display: grid;
-    gap: space('lg');
-    text-align: center;
-
-    @include breakpoint('lg') {
-      gap: space('2xl');
-    }
-  }
-
-  &__title {
-    @include breakpoint('lg') {
-      text-align: left;
-    }
-  }
-
-  &__title::before {
-    color: getColor('opacity', '300l');
-    content: '01';
-    font-weight: bold;
-    margin-right: space('rg');
-  }
+.destination__title::before {
+  content: '01';
 }

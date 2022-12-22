@@ -1,0 +1,30 @@
+.crew,
+.destination,
+.technology {
+  padding-top: space('md');
+
+  @include breakpoint('lg') {
+    padding-top: space('xl');
+  }
+
+  &-page {
+    background-size: cover;
+    padding-bottom: space('xl');
+  }
+
+  &__container {
+    display: grid;
+    gap: space('lg');
+    text-align: center;
+
+    @include breakpoint('lg') {
+      gap: space('2xl');
+    }
+  }
+
+  &__title {
+    @include breakpoint('lg') {
+      text-align: left;
+    }
+  }
+}

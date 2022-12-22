@@ -1,7 +1,12 @@
 .tab {
+  animation: fadeInToRight 1.5s ease-out 0s forwards;
   align-items: center;
   display: grid;
   justify-items: center;
+
+  @include breakpoint('lg') {
+    animation: fadeInToTop 1.5s ease-out 0s forwards;
+  }
 
   @include breakpoint('bg') {
     column-gap: space('xb');
@@ -63,7 +68,7 @@
       cursor: pointer;
     }
 
-    input[checked='true'] + & {
+    input:checked + & {
       border-bottom-color: hsl(0, 0%, 100%);
       color: getColor('neutral', 100);
     }

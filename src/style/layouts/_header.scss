@@ -24,6 +24,7 @@
       display: flex;
       flex-direction: column;
       gap: space('rg');
+      counter-set: numItem -1;
 
       & > li {
         counter-increment: numItem;
@@ -74,7 +75,7 @@
     padding: 0;
 
     &__logo {
-      margin: space('md');
+      margin: space('md') size(40);
     }
 
     &__navigation {
@@ -154,6 +155,8 @@
     }
 
     &__list {
+      counter-set: numItem -1;
+
       & > li {
         counter-increment: numItem;
 

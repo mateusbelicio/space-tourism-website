@@ -1,0 +1,15 @@
+.technology-page {
+  background-image: url('../assets/technology/background-technology-mobile.jpg');
+
+  @include breakpoint('lg') {
+    background-image: url('../assets/technology/background-technology-tablet.jpg');
+  }
+
+  @include breakpoint('bg') {
+    background-image: url('../assets/technology/background-technology-desktop.jpg');
+  }
+}
+
+.technology__title::before {
+  content: '03';
+}

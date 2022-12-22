@@ -1,4 +1,5 @@
 import { fillDestination } from './destinations.js';
+import { fillCrew } from './crew.js';
 import { resetButtonState, closeOnPressEscape } from './menu.js';
 
 /////////////////////////////////////////////////
@@ -19,4 +20,17 @@ buttonMenu.addEventListener('click', () => {
 // Destination page: tabs
 
 const tabs = document.querySelectorAll('.tab-js > input[name="planets"]');
-tabs.forEach((tab) => tab.addEventListener('click', fillDestination));
+tabs?.forEach((tab) => tab.addEventListener('click', fillDestination));
+
+/////////////////////////////////////////////////
+// Crew page: carousel
+
+const carouselController = document.querySelector('.carousel__controller');
+let currentSlider = document.querySelector('.carousel__controller > input:checked');
+
+carouselController?.addEventListener('click', function (e) {
+  if (e.target.tagName !== 'INPUT' || e.target === currentSlider) return;
+
+  currentSlider = e.target;
+  fillCrew.bind(currentSlider)();
+});

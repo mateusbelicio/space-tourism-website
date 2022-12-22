@@ -5,14 +5,17 @@
 /* CONTAINER */
 
 .container {
-  $padding: space('md');
-  
   width: 100%;
   min-width: 15rem;
-  padding-inline: $padding;
+  padding-inline: space('md');
   margin-inline: auto;
 
+  @include breakpoint('lg') {
+    padding-inline: size(40);
+  }
+
   @include breakpoint('bg') {
+    padding-inline: 0;
     width: min(80%, size(1440));
   }
 }

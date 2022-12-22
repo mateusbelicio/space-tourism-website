@@ -1,0 +1,112 @@
+.crew-page {
+  @include breakpoint('lg') {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    background-image: url('../assets/crew/background-crew-mobile.jpg');
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    opacity: 0.25;
+    z-index: z-index('below');
+
+    @include breakpoint('lg') {
+      background-image: url('../assets/crew/background-crew-tablet.jpg');
+    }
+
+    @include breakpoint(51.8rem) {
+      background-image: url('../assets/crew/background-crew-desktop.jpg');
+    }
+  }
+}
+
+.crew {
+  &__container {
+    display: grid;
+    max-width: size(450);
+
+    @include breakpoint('lg') {
+      max-width: none;
+      row-gap: space('lg');
+    }
+
+    @include breakpoint('bg') {
+      height: calc(100vh - size(144));
+      grid-template-columns: 1fr 0.8fr;
+      grid-template-rows: auto 1fr size(100);
+      align-items: center;
+      text-align: left;
+      justify-items: start;
+      row-gap: space('xb');
+    }
+  }
+
+  &__image {
+    justify-self: center;
+    animation: fadeInToRight 1.5s ease-out 0s forwards;
+
+    @include breakpoint('lg') {
+      animation: fadeInToTop 1.5s ease-out 0s forwards;
+    }
+
+    @include breakpoint('bg') {
+      grid-column: 2;
+      grid-row: 1 / -1;
+      align-self: end;
+      height: 100%;
+      overflow-y: hidden;
+    }
+  }
+
+  &__title::before {
+    content: '02';
+  }
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    align-self: start;
+    row-gap: space('xs');
+    animation: fadeInToRight 1.5s ease-out 0s forwards;
+
+    @include breakpoint('lg') {
+      animation: fadeInToTop 1.5s ease-out 0s forwards;
+      grid-row: 2;
+      margin-top: space('md');
+      max-width: 50ch;
+    }
+
+    @include breakpoint('bg') {
+      justify-self: start;
+      justify-items: start;
+      max-width: none;
+    }
+  }
+
+  &__bio {
+    max-width: 40ch;
+  }
+
+  &__name {
+    margin-bottom: space('xs');
+  }
+
+  &__controller {
+    animation: fadeInToRight 1.5s ease-out 0s forwards;
+
+    @include breakpoint('lg') {
+      animation: fadeInToTop 1.5s ease-out 0s forwards;
+      grid-row: 3;
+      margin-block: space('xs');
+    }
+
+    @include breakpoint('bg') {
+      align-self: start;
+    }
+  }
+}

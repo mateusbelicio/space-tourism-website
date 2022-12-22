@@ -16,7 +16,11 @@ body {
   line-height: 1.7778;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4,
+.heading--1, 
+.heading--2, 
+.heading--3, 
+.heading--4 {
   color: getColor('neutral', 100);
   font-family: $ff-heading;
   font-weight: normal;
@@ -54,7 +58,8 @@ h3,
 
 h4, 
 .heading--4 {
-  font-size: clamp(size(16), 1.6vw, size(32));
+  font-size: clamp(size(16), 3.125vw, size(32));
+  color: getColor('opacity', '400l');
 }
 
 h5, 
@@ -62,6 +67,13 @@ h5,
   font-family: $ff-subheading;
   font-size: clamp(size(16), 2.6vw, size(28));
   letter-spacing: clamp(size(2.7), 0.25vw, size(4.72));
+
+  &::before {
+    color: getColor('opacity', '300l');
+    font-weight: bold;
+    margin-right: space('rg');
+    content: '';
+  }
 }
 
 .subheading {

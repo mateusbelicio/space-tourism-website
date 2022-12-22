@@ -40,7 +40,8 @@
     }
 
     &:active,
-    &[data-status='active'] {
+    &[data-status='active'],
+    input:checked + & {
       opacity: 1;
     }
   }
@@ -58,7 +59,8 @@
     }
 
     &:active,
-    &[data-status='active'] {
+    &[data-status='active'],
+    input:checked + & {
       border: 1px solid hsla(0, 0%, 100%, 1);
       background-color: getColor('neutral', 100);
       color: getColor('primary');

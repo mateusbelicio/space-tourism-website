@@ -28,7 +28,6 @@
     }
 
     @include breakpoint('bg') {
-      animation: fadeInToTop 1.5s ease-out 0s forwards;
       grid-auto-flow: column;
       justify-content: space-between;
       align-items: end;
