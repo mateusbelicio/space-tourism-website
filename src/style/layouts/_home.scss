@@ -1,6 +1,7 @@
 .home-page {
   background-image: url('../assets/home-page/background-home-mobile.jpg');
   background-size: cover;
+  background-position: center center;
   padding-bottom: space('xl');
 
   @include breakpoint('lg') {

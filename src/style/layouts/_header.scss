@@ -141,6 +141,7 @@
       display: flex;
       justify-content: flex-end;
       position: relative;
+      padding-inline: 0;
       z-index: z-index('dropdown');
 
       &::before {

@@ -47,12 +47,16 @@
   }
 
   &--slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: getColor('primary');
     color: getColor('neutral', 100);
     border: 1px solid hsla(0, 0%, 100%, 0.25);
+    font-size: clamp(size(16), 3.125vw, size(32));
     letter-spacing: 0;
     transition: background-color 0.3s ease-in, color 0.3s ease-in, border 0.2s ease-in;
-    width: 5rem;
+    width: clamp(size(40), 7.8vw, size(80));
 
     &:hover {
       border: 1px solid hsla(0, 0%, 100%, 1);

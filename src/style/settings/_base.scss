@@ -88,8 +88,9 @@ h5,
   &--2 {
     color: getColor('accent');
     font-family: $ff-subheading;
-    font-size: size(14);
+    font-size: clamp(size(14), 2vw, size(16));
     letter-spacing: size(2.36);
+    text-transform: uppercase;
   }
 }
 

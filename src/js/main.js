@@ -1,6 +1,7 @@
 import { fillDestination } from './destinations.js';
 import { fillCrew } from './crew.js';
 import { resetButtonState, closeOnPressEscape } from './menu.js';
+import { fillTechnology } from './tech.js';
 
 /////////////////////////////////////////////////
 // Functionality of menu button on mobile screens
@@ -28,9 +29,20 @@ tabs?.forEach((tab) => tab.addEventListener('click', fillDestination));
 const carouselController = document.querySelector('.carousel__controller');
 let currentSlider = document.querySelector('.carousel__controller > input:checked');
 
-carouselController?.addEventListener('click', function (e) {
-  if (e.target.tagName !== 'INPUT' || e.target === currentSlider) return;
+carouselController?.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'INPUT' || event.target === currentSlider) return;
 
-  currentSlider = e.target;
+  currentSlider = event.target;
   fillCrew.bind(currentSlider)();
+});
+
+/////////////////////////////////////////////////
+// Technology page: slider
+
+const techController = document.querySelector('.technology__controller');
+
+techController?.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'INPUT') return;
+
+  fillTechnology.bind(event.target)();
 });

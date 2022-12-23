@@ -13,3 +13,93 @@
 .technology__title::before {
   content: '03';
 }
+
+.technology {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr min(80%, size(1440)) 1fr;
+    grid-template-areas:
+      '.     title      .'
+      'image image      image'
+      '.     controller .'
+      '.     main       .';
+
+    @include breakpoint('bg') {
+      grid-template-columns: calc((100% - min(80%, size(1440))) / 2) auto 60ch auto 1fr;
+      grid-template-rows: auto 1fr auto 1fr;
+      grid-template-areas:
+        '.     title      title   .     .'
+        '.     .          .       image image'
+        '.     controller main    image image'
+        '.     .          .       image image';
+      gap: 0;
+      min-height: 80vh;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__img-container {
+    grid-area: image;
+  }
+
+  &__image {
+    animation: fadeInToRight 1.5s ease-out 0s forwards;
+    max-height: size(310);
+    object-fit: cover;
+    width: 100%;
+
+    @include breakpoint('lg') {
+      animation: fadeInToTop 1.5s ease-out 0s forwards;
+    }
+
+    @include breakpoint('bg') {
+      width: auto;
+      max-height: none;
+      height: 100%;
+    }
+  }
+
+  &__controller {
+    grid-area: controller;
+    display: flex;
+    gap: space('rg');
+    justify-content: center;
+    animation: fadeInToRight 1.5s ease-out 0s forwards;
+
+    @include breakpoint('lg') {
+      animation: fadeInToTop 1.5s ease-out 0s forwards;
+    }
+
+    @include breakpoint('bg') {
+      flex-direction: column;
+      gap: space('lg');
+      margin-right: space('3xl');
+    }
+  }
+
+  &__content {
+    grid-area: main;
+    display: grid;
+    justify-items: center;
+    gap: space('rg');
+    animation: fadeInToRight 1.5s ease-out 0s forwards;
+
+    @include breakpoint('lg') {
+      animation: fadeInToTop 1.5s ease-out 0s forwards;
+    }
+
+    @include breakpoint('bg') {
+      margin-right: space('xb');
+      text-align: left;
+      justify-items: start;
+    }
+  }
+
+  &__description {
+    max-width: 60ch;
+    margin-top: space('sm');
+  }
+}
