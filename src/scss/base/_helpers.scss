@@ -1,0 +1,177 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/* ------------------------- */
+/* UTILITY CLASSES           */
+/* ------------------------- */
+
+@use '../abstracts/' as *;
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.block {
+  display: block;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: $max-width;
+
+  @include breakpoint('medium') {
+    padding-inline: 0;
+  }
+}
+
+.area-container {
+  & > * {
+    grid-column: 2;
+  }
+
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  grid-template-columns: minmax(1.5rem, 1fr) minmax(0, $max-width) minmax(1.5rem, 1fr);
+  column-gap: var(--container-gap, 0);
+  row-gap: var(--gap, 0);
+
+  @include breakpoint('medium') {
+    text-align: left;
+  }
+}
+
+.grid-container {
+  --container-gap: 0;
+
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-inline: 1.5rem;
+
+  @include breakpoint('medium') {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      repeat(2, minmax(0, calc($max-width / 2)))
+      minmax(1rem, 1fr);
+
+    & > *:first-child {
+      grid-column: 2;
+    }
+
+    & > *:last-child {
+      grid-column: 3;
+    }
+  }
+
+  * {
+    max-width: 50ch;
+  }
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.text-hidden {
+  color: transparent;
+  font-size: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Colors */
+
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .bg-#{$color}-#{$shade} {
+      background-color: color('#{$color}', $shade);
+    }
+  }
+}
+
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .text-#{$color}-#{$shade} {
+      color: color('#{$color}', $shade);
+    }
+  }
+}
+
+/* Typography */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@each $size, $value in $sizes {
+  .fs-#{$size} {
+    font-size: var(--fs-#{$size});
+  }
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+.numbered-title {
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+  letter-spacing: clamp(2.7px, 0.44vw, 4.72px);
+
+  span {
+    margin-right: 0.5em;
+    font-weight: 600;
+    color: color('neutral', 100, 0.25);
+  }
+}

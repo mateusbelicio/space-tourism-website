@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* ------------------------- */
+/* BASIC STYLE               */
+/* ------------------------- */
+body {
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  color: color('neutral', 100);
+  background-color: color('dark');
+  overflow-x: hidden;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  min-width: 20rem;
+}
+
+*[class$='-page'] {
+  padding-bottom: clamp(3rem, 11.7vw, 8.2rem);
+  background-size: cover;
+  background-position: center center;
+}

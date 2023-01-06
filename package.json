@@ -1,0 +1,28 @@
+{
+  "name": "space-tourism-website",
+  "version": "1.0.0",
+  "description": "This is a solution to the Space tourism website challenge on Frontend Mentor",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir ./dist",
+    "predeploy": "rd /s dist && parcel build src/index.html --no-source-maps --public-url /space-tourism-website/",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateusbelicio/space-tourism-website.git"
+  },
+  "keywords": [],
+  "author": "Mateus Belicio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateusbelicio/space-tourism-website/issues"
+  },
+  "homepage": "https://github.com/mateusbelicio/space-tourism-website/",
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "parcel": "^2.8.2",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.57.1"
+  }
+}

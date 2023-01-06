@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Container's maximum width
+/// @type Length
+$max-width: 69.375rem !default;
+
+/// Colors map
+/// @prop {String} color-key - Keys are identifiers mapped to a given color
+/// @prop {String} shade-key - Keys are identifiers mapped to a given shade
+/// @prop {Map} values - Values are actual color hsl code
+$colors: (
+  neutral: (
+    100: 0 0% 100%,
+    200: 0 0% 96%,
+    300: 0 0% 93%,
+    400: 0 0% 88%,
+    500: 0 0% 74%,
+    600: 0 0% 50%,
+    700: 0 0% 35%,
+    800: 0 0% 23%,
+    900: 0 0% 12%,
+  ),
+  dark: (
+    400: 230 35% 7%,
+    500: 231 15% 26%,
+  ),
+  accent: (
+    400: 231 77% 90%,
+    500: 231 77% 86%,
+  ),
+);
+
+/// Font sizes map
+/// @prop {String} key - Keys are identifiers mapped to a given size
+/// @prop {Map} values - Values are actual size expressed in rem
+$sizes: (
+  200: 0.875rem,
+  300: 1rem,
+  400: clamp(0.9375rem, 2vw, 1.125rem),
+  500: clamp(1rem, 3vw, 1.75rem),
+  600: clamp(1rem, 3.125vw, 2rem),
+  700: clamp(1.5rem, 5.2vw, 3.5rem),
+  800: clamp(3.5rem, 10.4vw, 6.25rem),
+  900: clamp(5rem, 19vw, 9.375rem),
+);
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in em
+$breakpoints: (
+  'small': 40em,
+  'medium': 65em,
+  'large': 75em,
+) !default;
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @prop {String} key - Layer’s name
+/// @prop {Number} value - Z value mapped to the key
+$z-indexes: (
+  'above': 600,
+  'modal': 500,
+  'dropdown': 400,
+  'default': 1,
+  'below': -1,
+);

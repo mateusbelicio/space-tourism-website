@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+.heading {
+  grid-auto-flow: column;
+  align-items: center;
+  margin-bottom: clamp(to-rem(24), to-view-width(40), to-rem(76));
+
+  &__logo {
+    margin-left: clamp(to-rem(24), to-view-width(24), to-rem(55));
+    padding-block: to-rem(24);
+    width: clamp(to-rem(40), to-view-width(40), to-rem(48));
+  }
+
+  &__navigation {
+    justify-self: end;
+  }
+
+  @include breakpoint('medium') {
+    grid-template-columns: auto 1fr auto;
+    margin-top: to-rem(40);
+
+    &::before {
+      content: '';
+      height: 1px;
+      display: block;
+      background-color: color('neutral', 100, 0.25);
+      grid-column: 2;
+      transform: scaleX(1.05);
+      transform-origin: left;
+      position: relative;
+      z-index: z('above');
+    }
+  }
+}

@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation component.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* Navigation */
+
+.navigation--primary {
+  --underline-gap: 0.46rem;
+
+  background-color: hsl(0 0% 0% / 0.9);
+
+  @supports (backdrop-filter: blur(1.5rem)) {
+    background-color: color('neutral', 100, 0.05);
+    backdrop-filter: blur(1.5rem);
+  }
+
+  @media screen and (max-width: 39.999em) {
+    & > .indicators--underline > * {
+      border-right: 0.2rem solid color('neutral', 100, 0);
+      border-bottom: 0;
+    }
+
+    &[aria-expanded='false'] {
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+
+    &[aria-expanded='true'] {
+      transform: translateX(0);
+      transition: transform 0.5s ease-out;
+    }
+  }
+
+  position: fixed;
+  inset: 0 0 0 30vw;
+  z-index: z('modal');
+  padding: 7.5rem 0 3rem 2rem;
+  margin: 0;
+  counter-set: number -1;
+
+  @include breakpoint('small') {
+    --underline-gap: 2.15rem;
+
+    position: static;
+    padding-block: 0;
+    padding-inline: 3rem;
+  }
+
+  @include breakpoint('medium') {
+    padding-inline: 7.75rem max(calc((100vw - $max-width) / 2), 1.5rem);
+  }
+
+  & > :where(ol, ul) {
+    --gap: 1.125rem;
+    flex-direction: column;
+
+    @include breakpoint('small') {
+      --gap: 2.25em;
+      flex-direction: row;
+    }
+  }
+
+  & li {
+    --gap: 0.7em;
+
+    counter-increment: number;
+    list-style: none;
+
+    &::before {
+      content: '0' counter(number);
+      font-weight: 700;
+      color: color('neutral', 100);
+      width: 2ch;
+
+      @include breakpoint('small') {
+        display: none;
+      }
+
+      @include breakpoint('medium') {
+        display: block;
+      }
+    }
+  }
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

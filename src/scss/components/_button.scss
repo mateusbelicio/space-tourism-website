@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* ------------------------- */
+/* COMPONENTS                */
+/* ------------------------- */
+
+/* Buttons */
+
+.button {
+  background: none;
+  border: none;
+
+  &--large {
+    font-size: clamp(1.25rem, 4.1vw, 2rem);
+    background-color: color('neutral', 100);
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    text-decoration: none;
+    padding: 0 1.4em;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: min-content;
+    z-index: z('default');
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: color('neutral', 100);
+      inset: 0;
+      border-radius: inherit;
+      z-index: z('below');
+    }
+
+    &:hover::after {
+      animation: pulse 1s linear infinite;
+    }
+  }
+
+  &--menu {
+    display: block;
+    position: absolute;
+    z-index: z('above');
+    right: clamp(1.5rem, 3vw, 3.45rem);
+    justify-self: end;
+    border: 0;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+
+    &[data-active='false'] {
+      background-image: url('../assets/icons/icon-hamburger.svg');
+    }
+
+    &[data-active='true'] {
+      background-image: url('../assets/icons/icon-close.svg');
+    }
+
+    @include breakpoint('small') {
+      display: none;
+    }
+  }
+}

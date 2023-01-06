@@ -1,0 +1,107 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the destination page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* ------------------------- */
+/* DESTINATION PAGE          */
+/* ------------------------- */
+
+.destination-page {
+  &::before {
+    content: '';
+    background-image: url('../assets/destination/background-destination-mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    z-index: z('below');
+
+    @include breakpoint('small') {
+      background-image: url('../assets/destination/background-destination-tablet.jpg');
+    }
+
+    @include breakpoint('medium') {
+      background-image: url('../assets/destination/background-destination-desktop.jpg');
+    }
+  }
+}
+
+.destination {
+  row-gap: clamp(to-rem(32), to-view-width(48), to-rem(64));
+
+  &__title {
+    @include breakpoint('small') {
+      justify-self: start;
+    }
+  }
+
+  &__main {
+    justify-items: center;
+    align-items: end;
+
+    @include breakpoint('medium') {
+      grid-auto-flow: column;
+      grid-template-columns: 1fr auto;
+
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: clamp(to-rem(170), to-view-width(300), to-rem(440));
+  }
+
+  &__tab {
+    --gap: clamp(1.625rem, 4vw, 2.25rem);
+
+    justify-content: center;
+    margin-bottom: clamp(to-rem(20), to-view-width((28)), to-rem(36));
+
+    .button {
+      padding-bottom: clamp(to-rem(8), to-view-width(10), to-rem(12));
+    }
+
+    @include breakpoint('medium') {
+      justify-content: flex-start;
+    }
+  }
+
+  &__name {
+    margin-bottom: clamp(to-rem(10), to-view-width(12), to-rem(14));
+  }
+
+  &__description {
+    max-width: 65ch;
+
+    @include breakpoint('medium') {
+      max-width: 43ch;
+    }
+  }
+
+  &__info {
+    margin-top: clamp(to-rem(32), to-view-width(50), to-rem(54));
+    padding-top: clamp(to-rem(32), to-view-width(28), to-rem(28));
+    border-top: 1px solid color('dark', 500);
+
+    @include breakpoint('small') {
+      grid-auto-flow: column;
+      justify-items: center;
+    }
+
+    @include breakpoint('medium') {
+      justify-items: start;
+    }
+  }
+
+  &__info-content {
+    --flow-space: 0.5rem;
+  }
+
+  &__info-data {
+    font-size: to-rem(28);
+  }
+}

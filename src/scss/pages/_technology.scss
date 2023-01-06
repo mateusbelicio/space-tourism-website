@@ -1,0 +1,145 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the technology page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* ------------------------- */
+/* THECNOLOGY PAGE           */
+/* ------------------------- */
+
+.technology-page {
+  @include breakpoint('small') {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    background-image: url('../assets/technology/background-technology-mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.25;
+    z-index: z('below');
+
+    @include breakpoint('small') {
+      background-image: url('../assets/technology/background-technology-tablet.jpg');
+    }
+
+    @include breakpoint('medium') {
+      background-image: url('../assets/technology/background-technology-desktop.jpg');
+    }
+  }
+}
+
+.technology {
+  row-gap: clamp(to-rem(28), to-view-width(44), to-rem(44));
+  grid-template-rows: min-content auto min-content auto;
+
+  grid-template-areas:
+    '.      title  .'
+    'slider slider slider'
+    '.      tab    .'
+    '.      info   .';
+
+  &__title {
+    grid-area: title;
+    margin-bottom: clamp(to-rem(4), to-view-width(10), to-rem(16));
+
+    @include breakpoint('small') {
+      justify-self: start;
+    }
+  }
+
+  &__slider {
+    place-self: center;
+    grid-area: slider;
+    height: to-view-width(310);
+    min-height: to-rem(170);
+
+    @include breakpoint('medium') {
+      height: 100%;
+    }
+
+    & > *:not(:first-child) {
+      opacity: 0;
+    }
+
+    & .slide {
+      transform-origin: bottom;
+      transition: transform 0.8s ease-in-out, opacity 0.1s 0.6s ease-in-out;
+
+      & > img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__tab {
+    margin-top: clamp(to-rem(6), to-view-width(8), to-rem(12));
+    align-self: start;
+    grid-area: tab;
+  }
+
+  &__content {
+    grid-area: info;
+  }
+
+  &__subtitle {
+    margin-bottom: clamp(to-rem(8), to-view-width(8), to-rem(16));
+  }
+
+  &__name {
+    margin-bottom: clamp(to-rem(16), to-view-width(16), to-rem(28));
+  }
+
+  &__description {
+    max-width: 50ch;
+  }
+}
+
+@include breakpoint('medium') {
+  .technology {
+    row-gap: 0;
+    grid-template-rows: min-content 1.5fr auto 1.5fr 1fr;
+    grid-template-columns:
+      minmax(1.5rem, 1fr)
+      auto
+      repeat(2, minmax(0, calc($max-width / 2)))
+      minmax(1.5rem, 1fr);
+
+    grid-template-areas:
+      '.    title title .      .'
+      '.    .     .     slider slider'
+      '.    tab   info  slider slider'
+      '.    .     .     slider slider'
+      '.    .     .     .      .';
+
+    &__title {
+      margin-bottom: to-rem(28);
+    }
+
+    &__slider {
+      max-height: to-rem(600);
+
+      & .slide > img {
+        object-fit: cover;
+      }
+    }
+
+    &__tab {
+      flex-direction: column;
+      align-self: center;
+      justify-self: start;
+      margin-right: to-rem(80);
+    }
+
+    &__content {
+      justify-self: start;
+      padding-right: to-rem(32);
+    }
+  }
+}

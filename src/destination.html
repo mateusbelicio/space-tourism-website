@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Space Tourism &ThinSpace; | &ThinSpace; Destination</title>
+    
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./scss/main.scss" />
+
+    <script type="module" src="./javascript/controller.js"></script>
+  </head>
+  
+  <body class="destination-page">
+    <header class="heading grid">
+      <img class="heading__logo" 
+           src="./assets/icons/logo.svg" alt="" 
+           aria-hidden="true"
+      />
+      <button class="heading__button button button--menu"
+              aria-controls="main-nav"
+              data-active="false">
+        <span class="text-hidden">Menu</span>
+      </button>
+      <nav id="main-nav" 
+           class="heading__navigation navigation navigation--primary ff-sans-cond uppercase letter-spacing-2 fs-300" 
+           aria-expanded="false">
+        <ol class="heading__list indicators--underline flex">
+          <li class="flex"><a class="heading__link" href="./index.html">Home</a></li>
+          <li class="flex active"><a class="heading__link" href="" >Destination</a></li>
+          <li class="flex"><a class="heading__link" href="./crew.html" >Crew</a></li>
+          <li class="flex"><a class="heading__link" href="./technology.html" >Technology</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <main class="destination area-container">
+        <h1 class="destination__title numbered-title"><span>01</span> Pick your destination</h1>
+        <article class="destination__main grid">
+          <img class="destination__image"
+               src="./assets/destination/image-moon.webp" 
+               alt="Moon picture">
+
+          <section class="destination__content">
+            <div class="destination__tab indicators--underline flex">
+              <button class="button fs-300 text-accent-400 uppercase letter-spacing-2 ff-sans-cond" 
+                      data-tab="0"
+                      aria-selected="true">Moon
+              </button>
+              <button class="button fs-300 text-accent-400 uppercase letter-spacing-2 ff-sans-cond" 
+                      data-tab="1"
+                      aria-selected="false">Mars
+              </button>
+              <button class="button fs-300 text-accent-400 uppercase letter-spacing-2 ff-sans-cond" 
+                      data-tab="2"
+                      aria-selected="false">Europa
+              </button>
+              <button class="button fs-300 text-accent-400 uppercase letter-spacing-2 ff-sans-cond" 
+                      data-tab="3"
+                      aria-selected="false">Titan
+              </button>
+            </div>    
+            
+            <h2 class="destination__name fs-800 ff-serif uppercase">Moon</h2>
+            <p class="destination__description fs-400 text-accent-400">
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away to help regain perspective and come back refreshed.
+              While you’re there, take in some history by visiting the Luna 2
+              and Apollo 11 landing sites.
+            </p>
+
+            <div class="destination__info grid">
+              <div class="destination__info-content flow">
+                <h3 class="destination__info-title fs-200 ff-sans-cond uppercase letter-spacing-2 text-accent-400">
+                  Avg. distance
+                </h3>
+                <span class="destination__info-data destination__info-data--distance ff-serif uppercase block">
+                  384,400 km
+                </span>
+              </div>
+              <div class="destination__info-content flow">
+                <h3 class="destination__info-title fs-200 ff-sans-cond uppercase letter-spacing-2 text-accent-400">
+                  Est. travel time
+                </h3>
+                <span class="destination__info-data destination__info-data--travel ff-serif uppercase block">
+                  3 days
+                </span>
+              </div>
+            </div>
+          </section>
+        </article>
+    </main>
+  </body>
+</html>

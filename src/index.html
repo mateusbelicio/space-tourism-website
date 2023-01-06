@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Space Tourism &ThinSpace; | &ThinSpace; Home</title>
+    
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./scss/main.scss" />
+
+    <script type="module" src="./javascript/controller.js"></script>
+  </head>
+  
+  <body class="home-page">
+    <header class="heading grid">
+      <img class="heading__logo" 
+           src="./assets/icons/logo.svg" alt="" 
+           aria-hidden="true"
+      />
+      <button class="heading__button button button--menu"
+              aria-controls="main-nav"
+              data-active="false">
+        <span class="text-hidden">Menu</span>
+      </button>
+      <nav id="main-nav" 
+           class="heading__navigation navigation navigation--primary ff-sans-cond uppercase letter-spacing-2 fs-300" 
+           aria-expanded="false">
+        <ol class="heading__list indicators--underline flex">
+          <li class="flex active"><a class="heading__link" href="">Home</a></li>
+          <li class="flex"><a class="heading__link" href="./destination.html" >Destination</a></li>
+          <li class="flex"><a class="heading__link" href="./crew.html" >Crew</a></li>
+          <li class="flex"><a class="heading__link" href="./technology.html" >Technology</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <main class="home grid-container">
+      <div class="home__content grid">
+        <h1 class="home__title fs-900 ff-serif text-neutral-100 uppercase">
+          <span class="fs-500 ff-sans-cond letter-spacing-1 text-accent-400 block">So, you want to travel to</span> Space
+        </h1>
+        <p class="fs-400 text-accent-400">
+          Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+          and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a
+          truly out of this world experience!
+        </p>
+      </div>
+      <a href="./destination.html" 
+          class="button button--large uppercase letter-spacing-2 ff-serif text-dark-400">
+          Explore
+      </a>
+    </main>
+  </body>
+</html>

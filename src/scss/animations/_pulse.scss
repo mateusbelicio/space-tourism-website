@@ -1,0 +1,15 @@
+/* ------------------------- */
+/* ANIMATIONS                */
+/* ------------------------- */
+
+@use '../abstracts/' as *;
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}

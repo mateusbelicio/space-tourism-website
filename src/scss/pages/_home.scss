@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* ------------------------- */
+/* HOME PAGE                 */
+/* ------------------------- */
+
+.home-page {
+  background-image: url('../assets/home-page/background-home-mobile.jpg');
+
+  @include breakpoint('small') {
+    background-image: url('../assets/home-page/background-home-tablet.jpg');
+  }
+
+  @include breakpoint('medium') {
+    background-image: url('../assets/home-page/background-home-desktop.jpg');
+  }
+}
+
+.home {
+  row-gap: clamp(5rem, 12.5vw, 7rem);
+
+  @include breakpoint('medium') {
+    align-items: end;
+  }
+
+  &__content {
+    --gap: 0.5rem;
+
+    justify-items: center;
+    align-content: center;
+    max-width: 48ch;
+
+    @include breakpoint('medium') {
+      justify-items: start;
+      justify-self: start;
+    }
+  }
+
+  &__title {
+    margin-bottom: min(1.5rem, 2vw);
+
+    span {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .button {
+    @include breakpoint('medium') {
+      justify-self: end;
+    }
+  }
+}

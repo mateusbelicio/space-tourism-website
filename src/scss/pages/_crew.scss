@@ -1,0 +1,150 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the crew page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* ------------------------- */
+/* CREW PAGE                 */
+/* ------------------------- */
+
+.crew-page {
+  @include breakpoint('small') {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    background-image: url('../assets/crew/background-crew-mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.25;
+    z-index: z('below');
+
+    @include breakpoint('small') {
+      background-image: url('../assets/crew/background-crew-tablet.jpg');
+    }
+
+    @include breakpoint('medium') {
+      background-image: url('../assets/crew/background-crew-desktop.jpg');
+    }
+  }
+}
+
+.crew {
+  grid-template-rows: min-content 1fr min-content auto;
+  row-gap: to-rem(32);
+
+  &__slider {
+    align-self: center;
+    border-bottom: 1px solid color('dark', 500);
+
+    & > *:not(:first-child) {
+      opacity: 0;
+    }
+
+    & .slide {
+      transform-origin: bottom;
+      transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+
+      & > img {
+        width: 60%;
+        object-position: bottom center;
+      }
+    }
+  }
+
+  &__tab {
+    align-self: start;
+  }
+
+  &__role {
+    color: color('neutral', 100, 0.5);
+    margin-bottom: clamp(to-rem(8), to-view-width(8), to-rem(16));
+  }
+
+  &__name {
+    margin-bottom: clamp(to-rem(16), to-view-width(16), to-rem(28));
+  }
+
+  &__bio {
+    max-width: 50ch;
+  }
+}
+
+@include breakpoint('small') {
+  .crew {
+    grid-template-rows: min-content auto min-content 1fr;
+
+    grid-template-areas:
+      '. title  .'
+      '. info   .'
+      '. tab    .'
+      '. slider .';
+
+    &__title {
+      grid-area: title;
+      justify-self: start;
+      margin-bottom: to-rem(28);
+    }
+
+    &__slider {
+      grid-area: slider;
+      max-width: to-rem(530);
+
+      & .slide > img {
+        width: 80%;
+      }
+    }
+
+    &__tab {
+      grid-area: tab;
+    }
+
+    &__content {
+      grid-area: info;
+    }
+  }
+}
+
+@include breakpoint('medium') {
+  .crew {
+    grid-template-rows: min-content 1fr 1fr to-rem(56) min-content to-rem(94);
+    grid-template-columns:
+      minmax(1.5rem, 1fr)
+      minmax(0, calc($max-width * 0.6))
+      minmax(0, calc($max-width * 0.4))
+      minmax(1.5rem, 1fr);
+
+    grid-template-areas:
+      '. title  slider .'
+      '. info   slider .'
+      '. info   slider .'
+      '. .      slider .'
+      '. tab    slider .'
+      '. .      slider .';
+
+    &__title {
+      margin-bottom: to-rem(28);
+    }
+
+    &__name {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &__tab {
+      justify-self: start;
+    }
+
+    &__content {
+      justify-self: start;
+      align-self: end;
+      width: 100%;
+    }
+  }
+}

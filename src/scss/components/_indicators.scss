@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the indicator component.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+/* Indicators */
+
+.indicators {
+  &--underline {
+    & > * {
+      cursor: pointer;
+      border: none;
+      border-bottom: 0.2rem solid color('neutral', 100, 0);
+      align-items: center;
+
+      a {
+        padding-block: var(--underline-gap, 1rem);
+      }
+
+      &:hover {
+        border-color: color('neutral', 100, 0.5);
+      }
+    }
+
+    & a {
+      flex-grow: 1;
+    }
+
+    & > .active,
+    & > [aria-selected='true'] {
+      color: color('neutral', 100);
+      border-color: color('neutral', 100);
+    }
+  }
+
+  &--dot {
+    & > * {
+      cursor: pointer;
+      border: none;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      padding: 0.3em;
+      background-color: color('neutral', 100, 0.25);
+
+      &:hover {
+        background-color: color('neutral', 100, 0.5);
+      }
+    }
+
+    & > [aria-selected='true'] {
+      background-color: color('neutral', 100, 1);
+    }
+  }
+
+  &--number {
+    & > * {
+      cursor: pointer;
+      border: 1px solid color('neutral', 100, 0.25);
+      border-radius: 50%;
+      aspect-ratio: 1;
+      width: clamp(to-rem(40), to-view-width(60), to-rem(80));
+      padding-inline: 1rem;
+      background-color: color('dark');
+      color: color('neutral', 100);
+      font-family: var(--ff-serif);
+      font-size: var(--fs-600);
+
+      &:hover {
+        border-color: color('neutral', 100);
+      }
+    }
+
+    & > .active,
+    & > [aria-selected='true'] {
+      background-color: color('neutral', 100);
+      color: color('dark');
+      border-color: color('neutral', 100);
+    }
+  }
+}
