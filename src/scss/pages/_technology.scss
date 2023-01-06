@@ -9,7 +9,7 @@
 /* ------------------------- */
 
 .technology-page {
-  @include breakpoint('small') {
+  @include breakpoint('medium') {
     padding-bottom: 0;
   }
 
